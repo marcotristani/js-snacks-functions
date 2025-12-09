@@ -10,12 +10,19 @@ const name = 'Mario';
 // Dichiara la funzione qui.
 const greetingTime = myname => {
     const currentTime = new Date();
-    const currentHour =currentTime.getHours();
+    const currentHour =13;//currentTime.getHours();
+    const currentMinutes = 0;//currentTime.getMinutes();
     let greeting = 'buonasera';
-    if( currentHour <= 13){
+    if( currentHour <=13){
         greeting = 'buongiorno';
+        if( currentHour === 13 && currentMinutes > 0){
+            greeting = 'buon pomeriggio';
+        }  
     }else if ( currentHour <= 17){
         greeting = 'buon pomeriggio';
+        if( currentHour === 17 && currentMinutes > 0){
+            greeting = 'buonasera';
+        }  
     }
     return `${greeting} ${myname}`;
 }
